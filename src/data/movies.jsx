@@ -1,3 +1,6 @@
+/** @jsxImportSource @emotion/react */
+import { css } from '@emotion/react';
+
 const movies = [
   {
     title: "Avatar",
@@ -177,4 +180,60 @@ const movies = [
   },
 ];
 
-export default movies;
+function MoviesList() {
+  return (
+    <div css={css`
+    display: flex;
+    flex-direction: column;
+    `}>
+    {
+      movies.map((item, index) => {
+          return (
+            <div key = {index} css={css`
+            display: flex;
+            background-color: white;
+            color: black;
+            gap: 20px;
+            margin: auto;
+            width: 450px;
+            height: 160px;
+            border-radius: 10px;
+            margin-bottom: 40px;
+            `}>
+              <div>
+                <img src={item.image} alt="" css={css`
+                width: 100px;
+                height: 100px;
+                border-radius: 15px;
+                object-fit: cover;
+                padding: 10px;
+                
+                `} />
+              </div>
+              <div>
+                  <div>Title: {item.title}</div>
+                  <div>Year: {item.year}</div>
+                  <div>Runtime: {item.runtime}</div>
+                  <div css={css`
+                  display: flex;
+                  gap: 10px;
+                  `}>Genres: {item.genres.map((genre, i) => {
+                    return (
+                      <div key={i} css={css`
+                      background-color: #EAAC99;
+                      border-radius: 10px;
+                      padding: 2px;
+                      `}>{genre}</div>
+                    )
+                     })}</div>
+                  <div>IMDB Ratings: {item.imdbRating}</div>
+                  <div>IMDE Votes: {item.imdbVotes}</div>
+              </div>
+            </div>
+          )
+      })
+    }
+    </div>
+  )
+}
+export default MoviesList;
