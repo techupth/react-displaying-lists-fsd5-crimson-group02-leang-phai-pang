@@ -60,11 +60,10 @@ export function MoviesList() {
             font-style: normal;
             font-weight: 400;
             line-height: 18px; /* 90% */
-
           `}
         >
           <div className="text-title" css={css``}>
-            Title:{item.title}
+            Title: {item.title}
           </div>
           <div css={css``}>Year: {item.year}</div>
           <div css={css``}>Runtime: {item.runtime}</div>
@@ -73,59 +72,71 @@ export function MoviesList() {
             css={css`
               display: flex;
               flex-direction: row;
+              justify-content: center;
+              align-items: center;
+             
             `}
           >
-            Genres:
             <div
               css={css`
                 display: flex;
                 flex-direction: row;
-
-                color: #000;
-                font-family: Kanit;
-                font-size: 16px;
-                font-style: normal;
-                font-weight: 400;
-                line-height: 18px; /* 112.5% */
+                justify-content: center;
+                align-items: center;
               `}
             >
+              Genres:
               <div
                 css={css`
                   display: flex;
-                  justify-content: center;
-                  align-items: center;
-                  width: 68px;
-                  height: 27px;
-                  flex-shrink: 0;
-                  border-radius: 10px;
-                  background: #eaac99;
-                  margin: 0px 2px;
-                  padding: 0px 8px;
+                  flex-direction: row;
+
+                  color: #000;
+                  font-family: Kanit;
+                  font-size: 16px;
+                  font-style: normal;
+                  font-weight: 400;
+                  line-height: 18px; /* 112.5% */
                 `}
               >
-                {item.genres[0]}
-              </div>
-              <div
-                css={css`
-                  display: flex;
-                  justify-content: center;
-                  align-items: center;
-                  width: 68px;
-                  height: 27px;
-                  flex-shrink: 0;
-                  border-radius: 10px;
-                  background: #eaac99;
-                  margin: 0px 4px;
-                  padding: 0px 8px;
-                `}
-              >
-                {item.genres[1]}
+                <div
+                  css={css`
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 68px;
+                    height: 27px;
+                    flex-shrink: 0;
+                    border-radius: 10px;
+                    background: #eaac99;
+                    margin: 0px 2px;
+                    padding: 0px 8px;
+                  `}
+                >
+                  {item.genres[0]}
+                </div>
+                <div
+                  css={css`
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 68px;
+                    height: 27px;
+                    flex-shrink: 0;
+                    border-radius: 10px;
+                    background: #eaac99;
+                    margin: 0px 4px;
+                    padding: 0px 8px;
+                  `}
+                >
+                  {item.genres[1]}
+                </div>
               </div>
             </div>
           </div>
 
-          <div css={css``}>IMDB Rating:{item.imdbRating}</div>
-          <div css={css``}>IMDB Votes:{item.imdbVotes}</div>
+          <div css={css``}>IMDB Rating: {item.imdbRating}</div>
+          <div css={css``}>IMDB Votes: {item.imdbVotes}</div>
         </div>
       </dev>
     );
