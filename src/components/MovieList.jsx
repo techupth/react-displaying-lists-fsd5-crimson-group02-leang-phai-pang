@@ -74,7 +74,6 @@ export function MoviesList() {
               flex-direction: row;
               justify-content: center;
               align-items: center;
-             
             `}
           >
             <div
@@ -141,6 +140,4 @@ export function MoviesList() {
       </dev>
     );
   }));
-
-  
 }
